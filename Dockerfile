@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     lsb-release
 
+RUN apt-get update && apt-get install make
+
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 80 3306
