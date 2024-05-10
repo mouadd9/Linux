@@ -1,6 +1,10 @@
 #!/bin/bash
-
-docker run -it -v /home/mouad/Linux/sql:/var/lib/mysql \
+mkdir sql/
+mkdir ressources/
+chmod 666 ressources/
+chmod 666 sql/
+docker run -it -v ./sql:/var/lib/mysql \
+               -v ./ressources:/var/www/html \ 
     -p 80:80 -p 3306:3306 \
-    --name container4 --cap-add=NET_ADMIN image 
+    --name container --cap-add=NET_ADMIN image 
 
